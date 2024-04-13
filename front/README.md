@@ -16,7 +16,7 @@ Install dependencies:
 
 > npm install
 
-Launch Front-end:
+Launch (Lancement) Front-end:
 
 > npm run start;
 
@@ -49,24 +49,25 @@ By default the admin account is:
 
 #### E2E
 
-Launching e2e test:
+Launching (Lancement) e2e test:
 
 > npm run e2e
 
 Generate coverage report (you should launch e2e test before):
+Générez un rapport de couverture (vous devez lancer le test e2e avant) :
 
 > npm run e2e:coverage
 
-Report is available here:
+Report is available here (Le rapport est disponible ici):
 
 > front/coverage/lcov-report/index.html
 
 #### Unitary test
 
-Launching test:
+Launching test (Essai de lancement):
 
 > npm run test
 
-for following change:
+for following change (pour suivre le changement):
 
 > npm run test:watch
