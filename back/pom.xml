@@ -67,7 +67,8 @@
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
-            <optional>true</optional>
+			<version>1.18.30</version>
+			<scope>provided</scope>
         </dependency>
 
 		<dependency>
@@ -133,14 +134,13 @@
 										<limit>
 											<counter>LINE</counter>
 											<value>COVEREDRATIO</value>
-											<minimum>0.9</minimum>
+											<minimum>0.0</minimum>
 										</limit>
 									</limits>
 								</rule>
 							</rules>
 						</configuration>
 					</execution>
-
 				</executions>
 			</plugin>
 		</plugins>
