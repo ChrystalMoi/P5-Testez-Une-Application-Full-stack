@@ -81,7 +81,7 @@ public class AuthControllerIT {
 
     @Test
     @DisplayName("Lorsque je demande à m'inscrire avec des données correctes, la réponse est OK")
-    public void testRegisterUserWorks() throws Exception {
+    public void testRegisterUser() throws Exception {
         //Given
         SignupRequest signupRequest = new SignupRequest();
         signupRequest.setEmail("test@test.com");
@@ -101,7 +101,7 @@ public class AuthControllerIT {
 
     @Test
     @DisplayName("Lorsque je veux m'inscrire mais que l'e-mail est déjà pris, la réponse est BadRequest et renvoie un message")
-    public void testRegisterUserDontWorkIfEmailIsAlreadyTaken() throws Exception {
+    public void testRegisterUserDontWorkWithEmailIsAlreadyUsed() throws Exception {
         // Given
         userRepository.save(testUser);
 
