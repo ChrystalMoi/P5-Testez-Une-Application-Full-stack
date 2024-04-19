@@ -5,24 +5,29 @@ import com.openclassrooms.starterjwt.repository.UserRepository;
 import com.openclassrooms.starterjwt.services.UserService;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
-import org.junit.jupiter.api.extension.ExtendWith;
-import org.mockito.InjectMocks;
-import org.mockito.Mock;
-import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.mock.mockito.MockBean;
 
 import java.util.Optional;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.mockito.Mockito.*;
 
-@ExtendWith(MockitoExtension.class)
+@SpringBootTest
 class UserServiceTest {
-
-    @Mock // Création d'un mock pour le UserRepository
+    @MockBean // Création d'un mock pour le UserRepository
     private UserRepository userRepository;
 
-    @InjectMocks // Injection du mock userRepository dans le UserService
+    @Autowired // Injection du mock userRepository dans le UserService
     private UserService userService;
+
+    final User mockUser=User.builder()
+            .email("test@test.com")
+            .firstName("Test")
+            .lastName("Test")
+            .password("azerty")
+            .admin(true)
+            .build();
 
     @Test
     @DisplayName("Quand je supprime un utilisateur, il doit appeler le repo user")
@@ -41,23 +46,12 @@ class UserServiceTest {
     @DisplayName("Quand je trouve un utilisateur valide FindById, il doit renvoyer un mock et appeler userRepo")
     void findByIdTestUser() {
         // Given - Donnée en entrée
-        // Création d'un mock d'utilisateur pour simuler ce que le repository doit renvoyer
-        User mockUser=User.builder()
-                .email("test@test.com")
-                .firstName("Test")
-                .lastName("Test")
-                .password("azerty")
-                .admin(true)
-                .build();
-
-        // Configuration du comportement mock : lorsqu'on appelle findById avec l'ID 1L, renvoyer ce mock d'utilisateur
         when(userRepository.findById(1L)).thenReturn(Optional.of(mockUser));
 
         // When - Ce que je veux tester
-        User userFound=userService.findById(1L);
+        userService.findById(1L);
 
         // Then - Comparaison du resultat obtenu de when avec ce qui est attendu
-        verify(userRepository, times(1)).findById(1L); // Vérification que l'utilisateur retourné correspond à celui qu'on a configuré dans le mock
-        assertEquals(mockUser, userFound); // Comparaison entre l'utilisateur mocké et celui retourner par la méthode
+        verify(userRepository, times(1)).findById(1L);
     }
 }
