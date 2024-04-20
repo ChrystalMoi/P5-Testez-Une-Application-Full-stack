@@ -3,7 +3,6 @@ package com.openclassrooms.starterjwt.integration;
 import com.openclassrooms.starterjwt.models.User;
 import com.openclassrooms.starterjwt.repository.UserRepository;
 import org.junit.jupiter.api.AfterEach;
-import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,18 +27,13 @@ public class UserControllerIT {
     @Autowired
     private UserRepository userRepository;
 
-    private User testUser;
-
-    @BeforeEach
-    void setUp() {
-        testUser = User.builder()
+    final User testUser = User.builder()
                 .email("test@test.com")
                 .password("azerty")
                 .lastName("Test")
                 .firstName("ReTest")
                 .admin(false)
                 .build();
-    }
 
     @AfterEach
     void clean() {
