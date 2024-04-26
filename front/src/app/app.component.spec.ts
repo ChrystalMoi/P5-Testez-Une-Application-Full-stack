@@ -1,14 +1,14 @@
 import { HttpClientModule } from '@angular/common/http';
 import { TestBed } from '@angular/core/testing';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { Router } from '@angular/router';
 import { RouterTestingModule } from '@angular/router/testing';
 import { expect } from '@jest/globals';
-import { Router } from '@angular/router';
+import { Observable, of } from 'rxjs';
 
-import { AppComponent } from './app.component';
 import { routes } from './app-routing.module';
+import { AppComponent } from './app.component';
 import { SessionService } from './services/session.service';
-import { BehaviorSubject, Observable, of } from 'rxjs';
 
 describe('AppComponent', () => {
   let router: Router;
