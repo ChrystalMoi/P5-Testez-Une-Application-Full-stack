@@ -41,4 +41,6 @@ testem.log
 .DS_Store
 Thumbs.db
 
-**/.DS_Store 
+**/.DS_Store
+
+.nyc_output
