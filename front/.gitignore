@@ -5,6 +5,7 @@
 /tmp
 /out-tsc
 /bazel-out
+.nyc_output/*
 
 # Node
 /node_modules
@@ -42,5 +43,3 @@ testem.log
 Thumbs.db
 
 **/.DS_Store
-
-.nyc_output
