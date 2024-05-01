@@ -1,5 +1,5 @@
 describe('Register spec', () => {
-  // Test: L'inscription réussie avec les identifiants corrects doit mener aux sessions
+  // Test: Inscription réussie avec les identifiants corrects qui doit mener aux sessions
   it("L'inscription réussie avec les identifiants corrects doit mener aux sessions", () => {
     // Given - Configuration pour simuler une inscription réussie
     cy.intercept('POST', '/api/auth/register', {
