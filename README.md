@@ -31,6 +31,12 @@ npm install
 
 ### Installation base de données
 
+Ouvrez l'application MySQL en tant qu'administrateur.
+
+Créer une nouvelle table.
+
+Copier le contenu de /ressources/sql/script.sql
+
 ### Installation front
 
 ### Installation back
