@@ -22,7 +22,7 @@ describe('Session create', () => {
         {
           id: 1,
           name: 'Première session de notre histoire',
-          date: '2024-05-02T00:00:00.000+00:00',
+          date: '2024-05-02T13:45:27.000+00:00',
           teacher_id: 1,
           description:
             'Description de la première session. Ca va être du feu !',
@@ -55,7 +55,7 @@ describe('Session create', () => {
       body: {
         id: 22,
         name: 'Session pour les chiens',
-        date: '2025-08-22T00:00:00.000+00:00',
+        date: '2025-08-22T13:45:27.000+00:00',
         teacher_id: 1,
         description: 'On test une description comme ça',
         users: [],
@@ -134,7 +134,7 @@ describe('Session create', () => {
         {
           id: 1,
           name: 'Première session de notre histoire',
-          date: '2024-05-02T00:00:00.000+00:00',
+          date: '2024-05-02T13:45:27.000+00:00',
           teacher_id: 1,
           description:
             'Description de la première session. Ca va être du feu !',
