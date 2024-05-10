@@ -4,14 +4,14 @@
 
 - [Prérequis](#prérequis)
 - [Installation](#installation)
-  - [Installation base de données](#installation-base-de-données)
-  - [Installation front](#installation-front)
-  - [Installation back](#installation-back)
+  - [Installation Base de données](#installation-base-de-données)
+  - [Installation Front-end](#installation-front)
+  - [Installation Back-end](#installation-back)
 - [Tests](#tests)
-  - [Tests Back](#tests-back)
-  - [Tests Front](#tests-front)
+  - [Tests Back-end](#tests-back)
+  - [Tests Front-end](#tests-front)
     - [Tests unitaires](#tests-unitaires)
-    - [Tests end-to-end](#tests-end-to-end)
+    - [Tests end-to-end (e2e)](#tests-end-to-end)
 
 ## Prérequis
 
