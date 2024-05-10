@@ -1,5 +1,18 @@
 # P5 - Testez une Application Full-stack
 
+## Sommaire
+
+- [Prérequis](#prérequis)
+- [Installation](#installation)
+  - [Installation base de données](#installation-base-de-données)
+  - [Installation front](#installation-front)
+  - [Installation back](#installation-back)
+- [Tests](#tests)
+  - [Tests Back](#tests-back)
+  - [Tests Front](#tests-front)
+    - [Tests unitaires](#tests-unitaires)
+    - [Tests end-to-end](#tests-end-to-end)
+
 ## Prérequis
 
 Avant de commencer à travailler sur ce projet, assurez-vous d'avoir les outils suivants installés sur votre ordinateur :
@@ -9,7 +22,7 @@ Avant de commencer à travailler sur ce projet, assurez-vous d'avoir les outils 
 - MySQL
 - Angular CLI 14
 
-## Installation
+## Installation projet
 
 1. Clonez le dépôt avec la commande suivante :
 
@@ -96,7 +109,7 @@ Pour exécuter les tests backend :
 7. Ajoutez le rapport de couverture au fichier .gitignore.
 8. Ouvrez le rapport de couverture dans un navigateur pour l'examiner.
 
-### Test Front
+### Tests Front
 
 #### Tests unitaires
 
