@@ -37,7 +37,7 @@ Créer une nouvelle table.
 
 Copier le contenu de `/ressources/sql/script.sql`
 
-Ouvrez `/back/src/main/resources/application.properties` et modifiez :
+Ouvrez `/back/src/main/resources/application.properties` et modifiez avec les paramètres appropriés pour votre base de données :
 
 ```
 Exemple de configuration pour MySQL
