@@ -81,10 +81,45 @@ Pour installer les dépendances du backend, exécutez la commande suivante depui
 mvn clean install
 ```
 
-## Tests
+## Tests _(avec rapport de couverture)_
 
 ### Tests Back
 
+Pour exécuter les tests backend :
+
+1. Dans IntelliJ, clic droit sur le dossier racine du projet.
+2. Sélectionnez "Run All Test with Coverage".
+3. Attendez que le processus se termine.
+4. Une mini-fenêtre s'ouvre à droite ("Coverage").
+5. Ouvrez un fichier et examinez les gouttières : vert -> couvert, orange -> partiellement couvert, rouge -> non couvert.
+6. Générez le rapport de couverture en cliquant sur "generate coverage report" en haut de la mini-fenêtre de droite et enregistrez-le.
+7. Ajoutez le rapport de couverture au fichier .gitignore.
+8. Ouvrez le rapport de couverture dans un navigateur pour l'examiner.
+
 ### Test Front
 
-### Test E2E
+#### Tests unitaires
+
+Pour exécuter les tests unitaires et générer un rapport de couverture :
+
+1. Dans votre terminal, accédez au dossier `/front` de votre projet.
+2. Exécutez la commande suivante :
+
+```
+ng test --silent --coverage
+```
+
+3. Attendez que le processus se termine.
+4. Un dossier `coverage` sera créé dans le dossier `/front`, contenant le rapport de couverture au format HTML (index.html).
+
+#### Tests end-to-end
+
+Pour exécuter les tests end-to-end (e2e) :
+
+- `npm run e2e`: Cette commande lance les tests e2e.
+- `npm run e2e:ci`: Cette commande lance les tests e2e en mode CI (Continuous Integration).
+- `npm run e2e:coverage`: Cette commande lance les tests e2e et génère un rapport de couverture.
+
+Les tests end-to-end permettent de simuler le comportement réel de l'application, en testant son interaction avec le navigateur et en vérifiant si les différentes fonctionnalités se comportent comme prévu dans un environnement similaire à celui de l'utilisateur final.
+
+Assurez-vous d'avoir le serveur frontend lancé (`ng serve`) avant d'exécuter les tests end-to-end.
