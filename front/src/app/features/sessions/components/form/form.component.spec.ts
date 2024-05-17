@@ -91,6 +91,9 @@ describe('FormComponent', () => {
     let navigateSpy = jest.spyOn(router, 'navigate'); // Pour surveiller les redirections
     mockSessionService.sessionInformation.admin = false; // Définit l'utilisateur comme non-administrateur
     jest.spyOn(router, 'url', 'get').mockReturnValue('/sessions/update/22'); // Simule une URL de mise à jour de session
+    // Espionne la méthode 'detail' du service sessionApiService et simule la réponse
+    const sessionDetailSpy = jest.spyOn(sessionApiService, 'detail');
+    sessionDetailSpy.mockReturnValue(of(sessionMock));
 
     // When
     component.ngOnInit(); // Déclenche l'initialisation du composant
@@ -100,6 +103,8 @@ describe('FormComponent', () => {
     expect(navigateSpy).toHaveBeenCalledWith(['/sessions']);
     // Vérifie si la variable onUpdate est définie sur true pendant la mise à jour
     expect(component['onUpdate']).toBe(true);
+    // Vérifie que l'API de détail de session a été appelée
+    expect(sessionDetailSpy).toHaveBeenCalled();
   });
 
   // Vérifie si les administrateurs ne sont pas redirigés au démarrage
