@@ -230,9 +230,13 @@ class SessionServiceTest {
         session.setUsers(Collections.singletonList(user));
 
         when(sessionRepository.findById(sessionId)).thenReturn(Optional.of(session));
+        when(userRepository.findById(userId)).thenReturn(Optional.of(user));
 
         // When/Then
-        assertThrows(NotFoundException.class, () -> sessionService.participate(sessionId, userId));
+        BadRequestException thrown = assertThrows(BadRequestException.class, () -> sessionService.participate(sessionId, userId));
+        assertNotNull(thrown, "BadRequestException devrait être lancée si l'utilisateur participe déjà");
+        verify(sessionRepository, times(1)).findById(sessionId);
+        verify(userRepository, times(1)).findById(userId);
         verify(sessionRepository, never()).save(any());
     }
 
