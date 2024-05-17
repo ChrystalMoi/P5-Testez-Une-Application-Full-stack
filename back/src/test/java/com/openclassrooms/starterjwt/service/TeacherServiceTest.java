@@ -34,13 +34,12 @@ class TeacherServiceTest {
                 mockTeacher(1L, "John", "Doe"),
                 mockTeacher(2L, "Jane", "Smith")
         );
-        when(teacherRepository.findAll()).thenReturn(expectedTeachers);
 
         // When
+        when(teacherRepository.findAll()).thenReturn(expectedTeachers);
         List<Teacher> actualTeachers = teacherService.findAll();
 
         // Then
-        verify(teacherRepository, times(1)).findAll(); //TODO : supprimer
         assertEquals(expectedTeachers.size(), actualTeachers.size());
         assertEquals(expectedTeachers, actualTeachers);
     }
